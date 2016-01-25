@@ -1,7 +1,6 @@
 var let =process.argv[2];
 // console.log(let);
 
-
 function Letter(let){
     this.charac = let;
     this.appear = false;
