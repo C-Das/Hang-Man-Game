@@ -14,15 +14,12 @@ function Word(wrd){
 
     this.checkIfLetterFound = function(guessLetter){
       var whatToReturn = 0;
-      debugger;
       for (var i=0; i <this.lets.length; i++){
-        console.log(this.lets[i]);
-        if(this.lets[i].Letter.charac === this.guessLetter) {
+        if(this.lets[i].charac === guessLetter) {
           this.lets[i].appear = true;
           ++whatToReturn;
+          console.log("What to return"+whatToReturn);
           return whatToReturn;
-        }else{
-          console.log("test");
         }
       }
     }
@@ -30,13 +27,13 @@ function Word(wrd){
     this.didWeFindTheWord = function(){
       var found = false;
 
-      if (this.lets.every(checkAppearTrue){
+      if (this.lets.every(checkAppearTrue)){
         found = true;
         return found;
       }
 
       function checkAppearTrue(value, index, ar){
-        if (value.Letter.appear === true) {
+        if (value.appear === true) {
           return true;
         } else {
           return false;
@@ -47,7 +44,9 @@ function Word(wrd){
     this.wordRender = function(){
       var str = "";
       for (var i=0; i <this.lets.length; i++){
-        str += this.lets[i].Letter.letterRender();
+        str += this.lets[i].letterRender();
+        console.log("test"+this.lets[i]);
+        console.log("Inside word render :"+str);
         return str;
       }
     }
